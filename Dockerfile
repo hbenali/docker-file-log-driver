@@ -16,5 +16,6 @@ RUN go get github.com/gogo/protobuf/io
 RUN go get github.com/snowzach/rotatefilehook
 
 COPY . /go/src/github.com/hbenali/docker-file-log-driver
+RUN go mod init
 RUN go get
 RUN go build --ldflags '-extldflags "-static"' -o /usr/bin/docker-file-log-driver
